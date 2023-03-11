@@ -56,7 +56,7 @@ router.get("/image", async (ctx, next) => {
     ctx.body = "<img src=\"" + url + "\"></>"
 });
 
-app.use(express.static(path.join(__dirname, './dist')))
+//app.use(express.static(path.join(__dirname, './dist')))
 // 启用路由
 app.use(router.routes()).use(router.allowedMethods());
 
