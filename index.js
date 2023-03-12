@@ -36,8 +36,13 @@ router.get("/chat", async (ctx, next) => {
         max_tokens: 2048,
         temperature: 0.2
     })
+    let choices = res.data.choices;
+    let  text = "";
+	choices.forEach(item=>{
+		text+=item.text+" <br> ";
+	});			
     // 将生成的内容返回给客户端
-    ctx.body = res.data.choices
+    ctx.body = text
 });
 
 router.get("/image", async (ctx, next) => {
