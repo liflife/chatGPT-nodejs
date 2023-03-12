@@ -39,7 +39,7 @@ router.get("/chat", async (ctx, next) => {
     let choices = res.data.choices;
     let  text = "";
 	choices.forEach(item=>{
-		text+=item.text+" <br> ";
+		text+="<p>"+item.text+" </p> ";
 	});			
     // 将生成的内容返回给客户端
     ctx.body = text
